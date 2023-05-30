@@ -460,6 +460,38 @@ Por padrão, a saída do comando de classificação é enviada para a saída pad
 
 Você pode usar pipes e operadores de redirecionamento de várias maneiras interessantes para concluir tarefas com mais eficiência diretamente da linha de comando.
 
+
+## Modo de acesso
+
+Quando um usuário listar as informações detalhadas de um arquivo ou diretório (`ls -l`), as informações retornadas incluem as permissões de acesso: **-rwxrw-rwx**
+
+```
+drwxrw-r-- 2 thiago grupoLo 4096 Jan 29 10:30 Arquivos 
+-rwxrw-r-- 1 thiago grupoLo 406 Dec 16 10:41 notas.txt
+-rw-r--r-- 1 thiago grupoLo    0 Oct 13  2022 .sudo_as_admin_successful
+drwxr-xr-x 5 thiago grupoLo 4096 Oct 15  2022 python_catkin
+```
+'-' ou 'd' : Indica se o objeto listado é um arquivo(-) ou diretório(d)
+Depois 3 letras para (rwx) para:
+- Permissões do usuário 
+- Permissões do grupo 
+ Permissões de outros
+
+Cada modo de acesso tem um valor numérico associado a ele conforme a tabela:
+
+![image](https://github.com/losaum/IFPR_Aulas/assets/4088030/b1c0a1cb-fa9a-4b8d-9be1-ac110e901638)
+
+![image](https://github.com/losaum/IFPR_Aulas/assets/4088030/c0c06bf8-c5e4-4599-ab2c-7f53875bf692)
+
+## chmod
+```
+chmod  <nU> <nG> <nO>   <arquivo>
+```
+Muda a permissão de um arquivo ou diretório nU=usuário nG=grupo nO=outros 
+```
+chmod 777 teste.txt 
+```
+
 ## Instalando e atualizando software
 
 Você pode instalar e atualizar programas de software diretamente da linha de comando usando o gerenciador de pacotes preferencial para a distribuição que você está executando.
@@ -473,7 +505,6 @@ Para atualizar os programas que já foram instalados, você pode executar:
 sudo apt update && sudo apt upgrade
 ```
 
-
 ## Diretórios Principais
 
 Os diretórios principais, além de outros, com seu conteúdo estão listados abaixo:
@@ -484,9 +515,7 @@ Os diretórios principais, além de outros, com seu conteúdo estão listados ab
 - /lib - Arquivos bibliotecas para programação em C.
 - /tmp - Armazenamento de arquivos temporários.
 - /mmt - Montagem de discos e periféricos.
-- /sbin - Diretório usado na inicialização do sistema. Demais pacotes para a administração do
-sistema devem #car em /usr/sbin ou /usr/local/sbin.
-- /var - Diretório que contém arquivos variáveis, tais como spool (filas de e-mail, crontab, impressão)
-e logs. Este diretório existe para que os arquivos que necessitem ser modificados fiquem nele e não no /usr.
+- /sbin - Diretório usado na inicialização do sistema. Demais pacotes para a administração do sistema devem ficar em /usr/sbin ou /usr/local/sbin.
+- /var - Diretório que contém arquivos variáveis, tais como spool (filas de e-mail, crontab, impressão) e logs. Este diretório existe para que os arquivos que necessitem ser modificados fiquem nele e não no /usr.
 - /home - Contém os diretórios pessoais dos usuários.
 - /root - É o diretório que contém os arquivos do administrador (seu home ). Porém alguns sistemas Unix-like utilizam /home/root.
