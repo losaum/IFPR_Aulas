@@ -132,6 +132,9 @@ Outra forma simples de executar em background é adicionar o operador `&` no fim
 cp filme.mov f: &
 ```
 
+
+Outra maneira para enviar processos para segundo plano é pressionando "CTRL" + "Z"” para que a tarefa seja parada momentaneamente. Em seguida, digite `bg`. Assim a tarefa será continuada, porém em segundo plano.
+
 ###  fg
 Traz as tarefas que estão em segundo plano para o primeiro plano (foreground).
 
